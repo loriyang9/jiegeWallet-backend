@@ -100,13 +100,13 @@ const getSheetsClient = (() => {
       ...(credentials
         ? { credentials }
         : {
-            keyFile:
-              process.env.GOOGLE_APPLICATION_CREDENTIALS ||
-              path.join(
-                __dirname,
-                "sunlit-adviser-479406-r0-b5a712496697.json"
-              ),
-          }),
+          keyFile:
+            process.env.GOOGLE_APPLICATION_CREDENTIALS ||
+            path.join(
+              __dirname,
+              "my-accounting-app-480005-157f28b943b0.json"
+            ),
+        }),
       scopes: ["https://www.googleapis.com/auth/spreadsheets"],
     });
 
@@ -494,8 +494,8 @@ const createTransactionHandler = async (req, res) => {
     ) ||
       findCategoryByName(categories, requestedCategoryName) ||
       findCategoryById(categories, DEFAULT_CATEGORY.id) || {
-        ...DEFAULT_CATEGORY,
-      };
+      ...DEFAULT_CATEGORY,
+    };
 
     const payload = {
       ...req.body,
@@ -552,8 +552,8 @@ app.put("/api/transactions/:id", requireAuth, async (req, res) => {
       findCategoryByName(categories, requestedCategoryName) ||
       findCategoryById(categories, found.rowData.category_id) ||
       findCategoryById(categories, DEFAULT_CATEGORY.id) || {
-        ...DEFAULT_CATEGORY,
-      };
+      ...DEFAULT_CATEGORY,
+    };
 
     const payload = {
       ...found.rowData,
