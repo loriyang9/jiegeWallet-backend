@@ -104,7 +104,7 @@ const getSheetsClient = (() => {
             process.env.GOOGLE_APPLICATION_CREDENTIALS ||
             path.join(
               __dirname,
-              "my-accounting-app-480005-157f28b943b0.json"
+              "sunlit-adviser-479406-r0-b5a712496697.json"
             ),
         }),
       scopes: ["https://www.googleapis.com/auth/spreadsheets"],
